@@ -1,0 +1,13 @@
+*{
+    margin: 0;
+    padding: 0;
+    transition: scroll;
+}
+html{
+    scroll-behavior: smooth;
+}
+
+@import "./base/variables";
+@import "./components/header";
+@import "./components/main";
+@import "./components/footer";

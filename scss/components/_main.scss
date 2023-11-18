@@ -1,0 +1,14 @@
+main{
+    height: auto;
+    width: 100%;
+    background-color: $color1;
+    .boton{
+        text-align: center;
+        button {
+            background-color: $color2;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    }
+}

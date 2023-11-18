@@ -1,0 +1,52 @@
+* {
+  margin: 0;
+  padding: 0;
+  transition: scroll;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+header .primerbarra {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #3d3f3f;
+}
+header .primerbarra p {
+  padding: 8px;
+  font-size: 16px;
+  color: #ffffff;
+}
+
+main {
+  height: auto;
+  width: 100%;
+  background-color: #000000;
+}
+main .boton {
+  text-align: center;
+}
+main .boton button {
+  background-color: #aee710;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #3d3f3f;
+}
+footer p {
+  padding: 8px;
+  font-size: 20px;
+  color: #ffffff;
+}
+
+/*# sourceMappingURL=style.css.map */

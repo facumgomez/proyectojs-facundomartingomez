@@ -1,0 +1,13 @@
+header{
+    .primerbarra{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $color3;
+    p{
+        padding: 8px;
+        font-size: 16px;
+        color: $color4;
+    }}
+}
