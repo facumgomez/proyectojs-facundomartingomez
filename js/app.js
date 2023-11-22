@@ -1,7 +1,12 @@
 function iniciarCompra (){
 
-const productos = ["COMBO DE MANCUERNAS 25kg", "BARRA DOMINADAS PARED", "BAND DOMINADAS", "RODILLERA DEPORTIVA", "SOGA PARA SALTAR"];
-const precio = [75000, 50000, 15000, 12000, 10000];
+const productos = [
+    { nombre: "COMBO DE MANCUERNAS 25kg", precio: 75000}, 
+    { nombre: "BARRA DOMINADAS PARED", precio: 50000}, 
+    { nombre: "BAND DOMINADAS", precio: 15000}, 
+    { nombre: "RODILLERA DEPORTIVA", precio: 12000}, 
+    { nombre: "SOGA PARA SALTAR", precio: 10000}
+];
 const formaPago = ["Efectivo (10% de descuento)", "Tarjeta de debito (en 1 pago)", "3 cuotas sin interes", "6 cuotas fijas (recargo del 10%)", "12 cuotas fijas (recargo del 20%)"];
 let selecProd = "Seleccione producto que desea comprar:\n";
 let selecPago = "Seleccione medio de pago que desea:\n";
@@ -16,22 +21,27 @@ let precioFinal = 0;
 let ingresoVal = false;
 
 const mostrarMsj = function (msj, list) {
-    let j = " ";
+    let j = "";
 
     for (let i = 0; i < list.length; i++) {
-        j = i + 1;
-        msj = msj + j + " - " + list[i] + "\n";
+        let o = (list[i].nombre || list[i]);
+        let j1 = i + 1;
+        j = j + j1 + "- " + o + "\n"
+
     }
-
-    j = j + 1;
-    msj = msj + j + " - " + "Salir";
-
-    return msj;
+    let salir = list.length + 1;
+    j = j + salir + " - Salir";
+    return msj + j;
 }
-
-function filtrarProductos(palabraClave) {
-    return productos.filter(producto => producto.toLowerCase().includes(palabraClave.toLowerCase()));
+function filtrarProductos(lista, filtro) {
+    return lista.filter(producto => producto.nombre.toLowerCase().includes(filtro.toLowerCase()));
 }
+const filtroPalabra = prompt("Ingrese una palabra para filtrar los productos:");
+const productosFiltrados = filtrarProductos(productos, filtroPalabra);
+
+console.log("Productos filtrados:");
+productosFiltrados.forEach(producto => console.log(producto.nombre));
+
 function validacion(mensaje, lista) {
     let seleccionado;
 
@@ -93,25 +103,15 @@ function calPrecioFinal(precio, cant, descuento, cuotas) {
 }
 
 function detalleProducto(productoSeleccionado) {
-    const palabraClave = prompt("Ingrese una palabra clave para filtrar productos:");
-    const productosFiltrados = filtrarProductos(palabraClave);
-
-    if (productosFiltrados.length > 0) {
-    prodSelec = validacion(selecProd, productosFiltrados);
-    ingresoVal = true;}else {
-        alert("No hay productos disponibles que coincidan con la búsqueda.");
-    }
-
-
     cantidadProd = cantidadProducto(cantidad);
     let opcionesPago = "";
-    opcionesPago = "Producto seleccionado: " + productos[productoSeleccionado - 1] + "\n";
+    opcionesPago = "Producto seleccionado: " + productos[productoSeleccionado - 1].nombre + "\n";
     opcionesPago = opcionesPago + "Cantidad: " + cantidadProd + "\n";
-    opcionesPago = opcionesPago + "Valor por unidad: " + "$" + precio[productoSeleccionado - 1] + "\n";
-    opcionesPago = opcionesPago + "Total: " + "$" + precio[productoSeleccionado - 1] * cantidadProd + "\n\n";
+    opcionesPago = opcionesPago + "Valor por unidad: " + "$" + productos[productoSeleccionado - 1].precio + "\n";
+    opcionesPago = opcionesPago + "Total: " + "$" + productos[productoSeleccionado - 1].precio * cantidadProd + "\n\n";
     opcionesPago = opcionesPago + selecPago;
     formadePago = validacion(opcionesPago, formaPago);
-} 
+    }
 
     prodSelec = validacion(selecProd, productos);
 
@@ -128,8 +128,8 @@ function detalleProducto(productoSeleccionado) {
         if (formadePago >= 1 && formadePago <= 5) {
         descuento = (formadePago === 1) ? 10 : 0;
         cuotas = (formadePago >= 3 && formadePago <= 5) ? (formadePago - 1) * 3 : 0;
-        precioFinal = calPrecioFinal(precio[prodSelec - 1], cantidadProd, descuento, cuotas);
-        detallePago = detallePago + "Producto: " + productos[prodSelec - 1] + "\n";
+        precioFinal = calPrecioFinal(productos[prodSelec - 1].precio, cantidadProd, descuento, cuotas);
+        detallePago = detallePago + "Producto: " + productos[prodSelec - 1].nombre + "\n";
         detallePago = detallePago + "Cantidad: " + cantidadProd + "\n";
         detallePago = detallePago + "Forma de pago: " + formaPago[formadePago - 1] + "\n";
         if (cuotas > 0) {
