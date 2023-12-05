@@ -1,13 +1,23 @@
-*{
-    margin: 0;
+* {
     padding: 0;
+    margin: 0;
     transition: scroll;
+    box-sizing: border-box;
+    font-family: 'Kanit', sans-serif;
 }
 html{
     scroll-behavior: smooth;
+}
+
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
 }
 
 @import "./base/variables";
 @import "./components/header";
 @import "./components/main";
 @import "./components/footer";
+@import "./base/up"

@@ -1,13 +1,87 @@
-header{
-    .primerbarra{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: $color3;
-    p{
-        padding: 8px;
-        font-size: 16px;
-        color: $color4;
-    }}
-}
+.primerBarra{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $color3;
+        p{
+            padding: 8px;
+            font-size: 16px;
+            color: $color4;
+        }
+    }
+.menu{
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    background-color: $color1;
+    header{
+        display: flex;
+        color: $color1;
+        flex-direction: column;
+        justify-content: space-evenly;
+        top: 0;
+        padding: 32px;
+        padding-right: 0;
+        height: 800px;
+        position: sticky;
+        .logo{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 16px;
+            aside{
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                border-radius: 16px;
+                overflow: hidden;
+                .buscar{
+                    flex-grow: 1;
+                    padding: 10px;
+                    border: 0;
+                    font-size: 15px;}
+                .botonBuscar{
+                    background-color: $color2;
+                    border: 0;
+                    padding: 10px;
+                    font-size: 15px;}
+                    }
+                }
+
+        nav{
+            ul{    
+                display: flex;
+                flex-direction: column;
+                gap:10px;
+                }
+            }
+        .botonMenu{
+            display: flex;
+            align-items: center;
+            background-color: transparent;
+            border: 0;
+            color: $color4;
+            font-size: 16px;
+            font-weight: 400;
+            padding: 10px;
+            width: 100%;
+            gap: 3px;
+            cursor: pointer;
+        }
+        .botonMenu:hover{
+            color: $color2;}
+        .active{
+            background-color: $color4;
+            color: $color1;
+            border-top-left-radius: 15px;
+            position: relative;}
+        .carritoMenu{
+            margin-top: 32px;}
+        .carritoCantidad{
+            background-color: $color4;
+            color: $color1;
+            border-radius: 5px;
+            padding:0 3px;}
+        }
+    }
+

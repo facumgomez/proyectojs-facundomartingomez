@@ -1,39 +1,248 @@
 * {
-  margin: 0;
   padding: 0;
+  margin: 0;
   transition: scroll;
+  box-sizing: border-box;
+  font-family: "Kanit", sans-serif;
 }
 
 html {
   scroll-behavior: smooth;
 }
 
-header .primerbarra {
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.primerBarra {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #3d3f3f;
 }
-header .primerbarra p {
+.primerBarra p {
   padding: 8px;
   font-size: 16px;
   color: #ffffff;
 }
 
-main {
-  height: auto;
-  width: 100%;
+.menu {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
   background-color: #000000;
 }
-main .boton {
-  text-align: center;
+.menu header {
+  display: flex;
+  color: #000000;
+  flex-direction: column;
+  justify-content: space-evenly;
+  top: 0;
+  padding: 32px;
+  padding-right: 0;
+  height: 800px;
+  position: sticky;
 }
-main .boton button {
+.menu header .logo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
+}
+.menu header .logo aside {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border-radius: 16px;
+  overflow: hidden;
+}
+.menu header .logo aside .buscar {
+  flex-grow: 1;
+  padding: 10px;
+  border: 0;
+  font-size: 15px;
+}
+.menu header .logo aside .botonBuscar {
   background-color: #aee710;
-  padding: 10px 20px;
+  border: 0;
+  padding: 10px;
+  font-size: 15px;
+}
+.menu header nav ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.menu header .botonMenu {
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  border: 0;
+  color: #ffffff;
   font-size: 16px;
+  font-weight: 400;
+  padding: 10px;
+  width: 100%;
+  gap: 3px;
   cursor: pointer;
+}
+.menu header .botonMenu:hover {
+  color: #aee710;
+}
+.menu header .active {
+  background-color: #ffffff;
+  color: #000000;
+  border-top-left-radius: 15px;
+  position: relative;
+}
+.menu header .carritoMenu {
+  margin-top: 32px;
+}
+.menu header .carritoCantidad {
+  background-color: #ffffff;
+  color: #000000;
+  border-radius: 5px;
+  padding: 0 3px;
+}
+
+main {
+  background-color: #ffffff;
+  margin: 16px;
+  margin-left: 0;
+  border-radius: 32px;
+  padding: 32px;
+}
+main h2 {
+  color: #000000;
+  margin-bottom: 16px;
+}
+main .conteinerProductos {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+main .listProductos img {
+  border: 3px solid #aee710;
+  border-radius: 16px;
+  max-width: 100%;
+}
+main .listProductos .detalleProducto {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: -30px;
+  position: relative;
+  background-color: #aee710;
+  color: #000000;
+  padding: 5px;
+  border-radius: 16px;
+}
+main .listProductos .detalleProducto h2 {
+  font-size: 14px;
+}
+main .listProductos .detalleProducto p {
+  font-size: 14px;
+}
+main .listProductos .detalleProducto button {
+  border: 0;
+  border-radius: 32px;
+  border: 2px solid #ffffff;
+  background-color: #ffffff;
+  color: #000000;
+  transition: background-color 0.4s;
+  padding: 3px;
+  text-transform: uppercase;
+  font-size: 12px;
+  cursor: pointer;
+}
+main .listProductos .detalleProducto button:hover {
+  background-color: #aee710;
+}
+
+.conteinerCarrito {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.carritoProducto {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(241, 235, 235, 0.733);
+  border-radius: 16px;
+  color: #000000;
+  padding: 8px;
+  padding-right: 30px;
+}
+.carritoProducto small {
+  font-size: 12px;
+}
+
+.carritoImagen img {
+  width: 64px;
+  border-radius: 16px;
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+button {
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.carritoOpciones {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+}
+
+.opcionesCarrito1 button {
+  border: 0;
+  border-radius: 10px;
+  background-color: rgba(241, 235, 235, 0.733);
+  color: #000000;
+  text-transform: uppercase;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.opcionesCarrito2 {
+  display: flex;
+}
+
+.opcionesCarritoCompro {
+  display: flex;
+  border: 0;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background-color: #aee710;
+  color: #000000;
+  text-transform: uppercase;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.opcionesCarritoTotal {
+  display: flex;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  background-color: rgba(241, 235, 235, 0.733);
+  text-transform: uppercase;
+  padding: 5px;
+  gap: 16px;
+}
+
+.borrar {
+  display: none;
 }
 
 footer {
@@ -47,6 +256,21 @@ footer p {
   padding: 8px;
   font-size: 20px;
   color: #ffffff;
+}
+
+.subir {
+  height: 40px;
+  width: 40px;
+  background-color: #000000;
+  position: fixed;
+  right: 40px;
+  bottom: 40px;
+  text-align: center;
+  line-height: 30px;
+  font-size: 30px;
+  box-shadow: 0 0 20px #ffffff;
+  border: 1px solid #000000;
+  border-radius: 15px;
 }
 
 /*# sourceMappingURL=style.css.map */
