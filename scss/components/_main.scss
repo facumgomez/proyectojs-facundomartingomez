@@ -39,48 +39,48 @@ main{
             transition: background-color .4s;
             padding: 3px;
             text-transform: uppercase;
-            font-size: 12px;
-            cursor: pointer;}
+            font-size: 12px;}
         button:hover{
             background-color: $color2;}
         }
     }
 }
-
 .conteinerCarrito{
     display: flex;
     flex-direction: column;
     gap: 16px;}
-
-    .carritoProducto{
+    .carritoProductos{
         display: flex;
-        justify-content: space-between;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .carritoProducto{
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
         align-items: center;
         background-color: $color5;
         border-radius: 16px;
-        color: $color1;
         padding: 8px;
-        padding-right: 30px;
+        .carritoCantidad, .carritoPrecio, .carritoSubtotal{
+            margin-left: 12px;}
         small{
-            font-size: 12px;}
-    }
-        .carritoImagen img{
+            font-size: 10px;}
+        img{
             width: 64px;
             border-radius: 16px;}
         h3{
-            font-size: 20px;
+            font-size: 15px;
             font-weight: 500;}
-
         button{
             border: 0;
             background-color: transparent;
-            cursor: pointer;
         }
+    }
 
 .carritoOpciones{
     display: flex;
     justify-content: space-between;
-    font-size: 10px;}
+    font-size: 15px;}
     .opcionesCarrito1{
         button{
             border: 0;
@@ -89,7 +89,6 @@ main{
             color: $color1;
             text-transform: uppercase;
             padding: 8px;
-            cursor: pointer;
         }
     }
     .opcionesCarrito2{
@@ -102,16 +101,14 @@ main{
             background-color: $color2;
             color: $color1;
             text-transform: uppercase;
-            padding: 5px;
-            cursor: pointer;}
+            padding: 3px;}
         .opcionesCarritoTotal{
             display: flex;
             border-top-left-radius: 10px;
             border-bottom-left-radius: 10px;
             background-color: $color5;
             text-transform: uppercase;
-            padding: 5px;
-            gap: 16px;}
+            padding: 3px;}
 
 .borrar{
     display: none;

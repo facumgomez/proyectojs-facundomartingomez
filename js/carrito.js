@@ -1,13 +1,14 @@
 let productosCarrito = localStorage.getItem("productosAlCarrito");
-productosCarrito = JSON.parse(productosCarrito)
+productosCarrito = JSON.parse(productosCarrito);
 
 const carritoVacio = document.querySelector("#carritoVacio");
 const carritoProductos = document.querySelector("#carritoProductos");
 const carritoOpciones = document.querySelector("#carritoOpciones");
 const carritoCompra = document.querySelector("#carritoCompra");
 const carritoTotal = document.querySelector("#carritoTotal");
-const carritoOpBorrar = document.querySelector("#carritoOpcionesBorrar");
+let carritoOpBorrar = document.querySelector("#opcionesCarritoBorrar");
 let carritoBorrar = document.querySelectorAll(".carritoBorrar");
+let carritoOpCompro = document.querySelector("#opcionesCarritoCompro");
 
 
 function cargarCarrito(){
@@ -17,47 +18,53 @@ function cargarCarrito(){
         carritoOpciones.classList.remove("borrar");
         carritoCompra.classList.add("borrar");
         
-        carritoProductos = innerHTML = "";
+        carritoProductos.innerHTML = "";
         productosCarrito.forEach(producto => {
             const div = document.createElement("div");
             div.classList.add("carritoProducto");
             div.innerHTML = `
-            img class="carritoImagen" src="${producto.imagen}" alt="${producto.titulo}">
+            <img src="${producto.imagen}" alt="${producto.titulo}">
             <div class="carritoTitulo">
-                <small>Titulo</small>
+                <small>Producto:</small>
                 <h3>${producto.titulo}</h3>    
             </div>
             <div class="carritoCantidad">
-                <small>Cantidad</small>
-                <p>${producto.cantidad}</p>
+                <small>Cantidad:</small>
+                <p><button class="botonCantidad" data-id="${producto.id}" data-operacion="restar">-</button>
+                ${producto.cantidad}
+                <button class="botonCantidad" data-id="${producto.id}" data-operacion="sumar">+</button></p>
             </div>
             <div class="carritoPrecio">
-                <small>Precio</small>
+                <small>Precio:</small>
                 <p>$${producto.precio}</p>
             </div>
             <div class="carritoSubtotal">
-                <small>SubTotal</small>
-                <p>${producto.precio * cantidad}</p>
+                <small>SubTotal:</small>
+                <p>$${producto.precio * producto.cantidad}</p>
             </div>
-                <button class=carritoBorrar id="${producto.id}"><<i class="bi bi-trash3-fill-text-danger"></i>/button>
-            `
+                <button class="carritoBorrar" id="${producto.id}"><i class="bi bi-trash3-fill text-danger"></i></button>
+            `;
         carritoProductos.append(div);
-    });
+    const restar = div.querySelector('.botonCantidad[data-operacion="restar"]');
+    const sumar = div.querySelector('.botonCantidad[data-operacion="sumar"]');
+
+    restar.addEventListener("click", () => modificarCantidad(producto.id, "restar"));
+    sumar.addEventListener("click", () => modificarCantidad(producto.id, "sumar"));
+})
+    actualizarAgregar ();
+    actualizarTotal();
     }else{
         carritoVacio.classList.remove("borrar");
         carritoProductos.classList.add("borrar");
         carritoOpciones.classList.add("borrar");
         carritoCompra.classList.add("borrar");
     }
-    actualizarAgregar ();
-    actualizarTotal();
 }
 cargarCarrito();
 
-
 function actualizarAgregar (){
-    carritoOpBorrar = document.querySelectorAll (".opcionesCarritoBorrar");
-    carritoOpBorrar.forEach(boton=>{
+    carritoBorrar = document.querySelectorAll (".carritoBorrar");
+    carritoBorrar.forEach(boton=>{
         boton.addEventListener("click", eliminarCarrito);
     })
 }
@@ -69,13 +76,31 @@ function eliminarCarrito(e){
 
     localStorage.setItem("productosAlCarrito", JSON.stringify(productosCarrito));
 }
-function actualizarTotal(){
-    const sumaTotal = productosCarrito.reduce((acc, producto)=> acc + (producto.precio * precio.cantidad), 0)
-    carritoTotal.innerText `$${sumaTotal}`;
-}
-carritoTotal.addEventListener("click", )
-carritoTotal.addEventListener("click", compraFinalizada);
+function modificarCantidad(id, operacion) {
+    const index = productosCarrito.findIndex(producto => producto.id === id);
 
+    if (index !== -1) {
+        if (operacion === "restar" && productosCarrito[index].cantidad > 1) {
+            productosCarrito[index].cantidad -= 1;
+        } else if (operacion === "sumar") {
+            productosCarrito[index].cantidad += 1;
+        }
+        cargarCarrito();
+        localStorage.setItem("productosAlCarrito", JSON.stringify(productosCarrito));
+    }
+}
+function actualizarTotal(){
+    const sumaTotal = productosCarrito.reduce((acc, producto)=> acc + (producto.precio * producto.cantidad), 0);
+    carritoTotal.innerText = `$${sumaTotal}`;
+}
+
+carritoOpBorrar.addEventListener("click", opcionesCarritoBorrar);
+function opcionesCarritoBorrar() {
+    productosCarrito.length = 0;
+    localStorage.setItem("productosAlCarrito", JSON.stringify(productosCarrito));
+    cargarCarrito();}
+
+carritoOpCompro.addEventListener("click", compraFinalizada);
 function compraFinalizada(){
     productosCarrito.length = 0;
     localStorage.setItem("productosAlCarrito", JSON.stringify(productosCarrito));
@@ -85,4 +110,3 @@ function compraFinalizada(){
     carritoOpciones.classList.add("borrar");
     carritoCompra.classList.remove("borrar");
 }
-carritoTotal.addEventListener("click", compraFinalizada)

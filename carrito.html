@@ -3,37 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="FitPoint Equipment - Productos de Musculación">
+    <meta name="keywords" content="fitness, mancuernas, pesas, gimanasio, maquinas, entrenamiento, funcional, crossfit, barras, discos, ejercicio, calsitenia, deporte">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+    <link rel="icon" type="image/x-icon" href="./img/logo.ico">
     <title>Carrito - FitPoint Equipment</title>
     <link rel="stylesheet" href="./css/style.css">
 </head>
-<section>
-    <section class="primerBarra">
+<body>
+    <article class="primerBarra">
         <p>¡HASTA 3 CUOTAS SIN INTERÉS EN TODOS NUESTROS PRODUCTOS!</p>
-    </section>
-    <section class="menu">
+    </article>
+    <article class="responsive">
         <header>
-            <div class="logo"> <img src="./img/fitlogo.png" alt="logo de FitPoint">
-                <aside>
-                    <input type="text" class="buscar" placeholder="Buscar productos">
-                    <input type="submit" class="botonBuscar" value="🔎︎">
-                </aside>
+            <div><a href="./index.html"><img src="./img/logofit.png" alt="logo de FitPoint"></a>
+            </div>
+            <button id="abrir" class="abrir"><i class="bi bi-three-dots-vertical text-white"></i></button>
+        </header>
+    </article>
+    <section class="menu">
+        <article class="barraPrincipal">
+        <header>
+            <button id="cerrar" class="cerrar"><i class="bi bi-x-lg text-white"></i></button>
+            <div class="logo">
+                <a href="./index.html"><img src="./img/fitlogo.png" alt="logo de FitPoint"></a>
             </div>
             <nav>
-                <ul class="barraNav">
+                <ul>
                     <li>
                         <a class="botonMenu volverMenu" href="./index.html">
                             <i class="bi bi-arrow-return-left text-white"></i>Volver a la Tienda</a>
                     </li>
-                    <li> 
-                        <a class="botonMenu carritoMenu active" href="./carrito.html">
-                            <i class="bi bi-bag-fill text-black"></i>Carrito</a>
-                    </li>
                 </ul>
             </nav>
         </header>
+        </article>
         <main>
             <h2 class="tituloPrincipal">Carrito</h2>
             <div class="conteinerCarrito">
@@ -43,14 +49,14 @@
                 </div>
                 <div id="carritoOpciones" class="carritoOpciones borrar">
                     <div class="opcionesCarrito1">
-                        <button id="carritoOpcionesBorrar" class="carritoOpcionesBorrar">Eliminar Carrito</button>
+                        <button id="opcionesCarritoBorrar" class="opcionesCarritoBorrar">Eliminar Carrito</button>
                     </div>
                     <div class="opcionesCarrito2">
                         <div class="opcionesCarritoTotal">
                             <p>Total:</p>
                             <p id="carritoTotal">$0</p>
                         </div>
-                        <button id="opcionesCarritoCompro" class="opcionesCarritoCompro">Comprar Ahora</button>
+                        <button id="opcionesCarritoCompro" class="opcionesCarritoCompro"><p>Comprar Ahora</p></button>
                     </div>
                 </div>
                 <p id="carritoCompra" class="carritoCompra borrar"> ¡Muchas gracias por elegirnos!</p>
@@ -58,12 +64,13 @@
         </main>
     </section>
     <footer>
-        <p>Todos los derechos reservados por copyright</p>
+        <p>©2023 FitPoint Equipment. Todos los derechos reservados por copyright</p>
     </footer>
     <a href="#" class="subir">
         <i class="bi bi-chevron-double-up text-white"></i>
     </a>
 
+    <script src="./js/responsive.js"></script>
     <script src="./js/carrito.js"></script>
 
 </body>

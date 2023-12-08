@@ -1,14 +1,30 @@
 .subir{
-height: 40px;
-width: 40px;
+height: 50px;
+width: 50px;
 background-color: $color1;
 position: fixed;
-right: 40px;
-bottom: 40px;
+right: 50px;
+bottom: 50px;
 text-align: center;
-line-height: 30px;
-font-size: 30px;
+line-height: 40px;
+font-size: 40px;
 box-shadow: 0 0 20px $color4;
 border: 1px solid $color1;
 border-radius: 15px;
 }
+.carritoMenu{
+    height: 50px;
+    width: 50px;
+    background-color: $color1;
+    position: fixed;
+    right: 50px;
+    bottom: 110px;
+    align-items: center;
+    line-height: 40px;
+    font-size: 20px;
+    box-shadow: 0 0 20px $color4;
+    border: 1px solid $color1;
+    border-radius: 15px;
+}
+.carritoUp{
+    color: $color4;}

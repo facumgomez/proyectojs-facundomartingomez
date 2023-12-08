@@ -485,7 +485,7 @@ const productos = [
     imagen:"./img/49.jpg",
     categoria: {
         nombre: "Barras y Discos",
-        id: "maquinas"
+        id: "barras"
     },
     precio: 124998
     },
@@ -538,6 +538,326 @@ const productos = [
         id: "fitness"
     },
     precio: 22649
+    },
+    {
+    id: "55",
+    titulo: "DISCO FUNDICION 2,5kg",
+    imagen:"./img/55.jpg",
+    categoria: {
+        nombre: "Barras y Discos",
+        id: "barras"
+    },
+    precio: 7369
+    },
+    {
+    id: "56",
+    titulo: "DISCO FUNDICON 12,5kg",
+    imagen:"./img/56.jpg",
+    categoria: {
+        nombre: "Barras y Discos",
+        id: "barras"
+    },
+    precio: 32390
+    },
+    {
+    id: "57",
+    titulo: "DISCO FUNDICION 10kg",
+    imagen:"./img/57.jpg",
+    categoria: {
+        nombre: "Barras y Discos",
+        id: "barras"
+    },
+    precio: 26144
+    },
+    {
+    id: "58",
+    titulo: "BARRA OLIMPICA ROMANA",
+    imagen:"./img/58.jpg",
+    categoria: {
+        nombre: "Barras y Discos",
+        id: "barra"
+    },
+    precio: 124726
+    },
+    {
+    id: "59",
+    titulo: "CINTURON CON CADENA CARGA",
+    imagen:"./img/59.jpg",
+    categoria: {
+        nombre: "Barras y Discos",
+        id: "barras"
+    },
+    precio: 19770
+    },
+    {
+    id: "60",
+    titulo: "BARRA OLIMPICA",
+    imagen:"./img/60.jpg",
+    categoria: {
+        nombre: "Barras y Discos",
+        id: "barras"
+    },
+    precio: 180691
+    },
+    {
+    id: "61",
+    titulo: "DISCO FUNDICION 15kg",
+    imagen:"./img/61.jpg",
+    categoria: {
+        nombre: "Barras y Discos",
+        id: "barras"
+    },
+    precio: 38659
+    },
+    {
+    id: "62",
+    titulo: "RODILLERA LEVANTAMIENTO",
+    imagen:"./img/62.jpg",
+    categoria: {
+        nombre: "Fitness",
+        id: "fitness"
+    },
+    precio: 23227
+    },
+    {
+    id: "63",
+    titulo: "BARRA DE FUERZA CON RESORTE",
+    imagen:"./img/63.jpg",
+    categoria: {
+        nombre: "Fitness",
+        id: "fitnes"
+    },
+    precio: 10860
+    },
+    {
+    id: "64",
+    titulo: "BARRA DOMINADAS PUERTA",
+    imagen:"./img/64.jpg",
+    categoria: {
+        nombre: "Barras y Discos",
+        id: "barras"
+    },
+    precio: 38659
+    },
+    {
+    id: "65",
+    titulo: "DISCO FUNDICION 2,5kg",
+    imagen:"./img/65.jpg",
+    categoria: {
+        nombre: "Barras y Discos",
+        id: "barras"
+    },
+    precio: 6960
+    },
+    {
+    id: "66",
+    titulo: "JAULA CROSS TRAINING",
+    imagen:"./img/66.jpg",
+    categoria: {
+        nombre: "Maquinas de Entrenamiento",
+        id: "maquinas"
+    },
+    precio: 183959
+    },
+    {
+    id: "67",
+    titulo: "EXPANSOR PECHO ELASTICO",
+    imagen:"./img/67.jpg",
+    categoria: {
+        nombre: "Bandas Elasticas",
+        id: "bandas"
+    },
+    precio: 6140
+    },
+    {
+    id: "68",
+    titulo: "BARRA CON ROSCA CROMADA",
+    imagen:"./img/68.jpg",
+    categoria: {
+        nombre: "Barras y Discos",
+        id: "barras"
+    },
+    precio: 41870
+    },
+    {
+    id: "69",
+    titulo: "DISCO PLASTICO 5kg",
+    imagen:"./img/69.jpg",
+    categoria: {
+        nombre: "Barras y Discos",
+        id: "barras"
+    },
+    precio: 6836
+    },
+    {
+    id: "70",
+    titulo: "CINTA DE PODER",
+    imagen:"./img/70.jpg",
+    categoria: {
+        nombre: "Barras y Discos",
+        id: "barras"
+    },
+    precio: 11090
+    },
+    {
+    id: "71",
+    titulo: "DISCO PLASTICO 2,5kg",
+    imagen:"./img/71.jpg",
+    categoria: {
+        nombre: "Barras y Discos",
+        id: "barras"
+    },
+    precio: 3559
+    },
+    {
+    id: "72",
+    titulo: "BARRA HUECA CON TOPES",
+    imagen:"./img/72.jpg",
+    categoria: {
+        nombre: "Barras y Discos",
+        id: "barras"
+    },
+    precio: 12996
+    },
+    {
+    id: "73",
+    titulo: "SOGA TREPAR CON ANCLAJE",
+    imagen:"./img/73.jpg",
+    categoria: {
+        nombre: "Entrenamiento Funcional",
+        id: "funcional"
+    },
+    precio: 67167
+    },
+    {
+    id: "74",
+    titulo: "BANCO HIP THRUST",
+    imagen:"./img/74.jpg",
+    categoria: {
+        nombre: "Maquinas de Entrenamiento",
+        id: "maquinas"
+    },
+    precio: 242855
+    },
+    {
+    id: "75",
+    titulo: "TOBILLERAS CON PESO 2kg",
+    imagen:"./img/75.jpg",
+    categoria: {
+        nombre: "Fitness",
+        id: "fitness"
+    },
+    precio: 5092
+    },
+    {
+    id: "76",
+    titulo: "POLEAS DOBLE ENFRENTADAS",
+    imagen:"./img/76.jpg",
+    categoria: {
+        nombre: "Maquinas de Entrenamiento",
+        id: "maquienas"
+    },
+    precio: 1031588
+    },
+    {
+    id: "77",
+    titulo: "PROTECTOR CERVICAL BARRA",
+    imagen:"./img/77.jpg",
+    categoria: {
+        nombre: "Barras y Discos",
+        id: "barras"
+    },
+    precio: 8506
+    },
+    {
+    id: "78",
+    titulo: "BANDA ELASTICA PUERTA",
+    imagen:"./img/78.jpg",
+    categoria: {
+        nombre: "Bandas Elasticas",
+        id: "bandas"
+    },
+    precio: 7620
+    },
+    {
+    id: "79",
+    titulo: "BANDA ELASTICA TOBILLERA",
+    imagen:"./img/79.jpg",
+    categoria: {
+        nombre: "Bandas Elasticas",
+        id: "bandas"
+    },
+    precio: 5376
+    },
+    {
+    id: "80",
+    titulo: "SOGA PARA SALTAR DE CUERO",
+    imagen:"./img/80.jpg",
+    categoria: {
+        nombre: "Entrenamiento Funcional",
+        id: "funcional"
+    },
+    precio: 7673
+    },
+    {
+    id: "81",
+    titulo: "SOGA PARA SALTAR DE ACERO",
+    imagen:"./img/81.jpg",
+    categoria: {
+        nombre: "Entrenamiento Funcional",
+        id: "funcional"
+    },
+    precio: 31135
+    },
+    {
+    id: "82",
+    titulo: "BARRA OLIMPICA CON TOPES",
+    imagen:"./img/82.jpg",
+    categoria: {
+        nombre: "Barras y Discos",
+        id: "barras"
+    },
+    precio: 229631
+    },
+    {
+    id: "83",
+    titulo: "BARRA HUECA PVC",
+    imagen:"./img/83.jpg",
+    categoria: {
+        nombre: "Barras y Discos",
+        id: "barras"
+    },
+    precio: 25278
+    },
+    {
+    id: "84",
+    titulo: "BANDA ELASTICA CON MANOPLA",
+    imagen:"./img/84.jpg",
+    categoria: {
+        nombre: "Bandas Elasticas",
+        id: "bandas"
+    },
+    precio: 5168
+    },
+    {
+    id: "85",
+    titulo: "DISCO PLASTICO 10kg",
+    imagen:"./img/85.jpg",
+    categoria: {
+        nombre: "Barras y Discos",
+        id: "barras"
+    },
+    precio: 13248
+    },
+    {
+    id: "86",
+    titulo: "BANCO DE PECHO Y ABDOMINAL",
+    imagen:"./img/86.jpg",
+    categoria: {
+        nombre: "Maquinas de Entrenamiento",
+        id: "maquinas"
+    },
+    precio: 263840
     }
 ]
 
@@ -545,7 +865,7 @@ const conteinerProductos = document.querySelector("#conteinerProductos");
 const botonCategoria = document.querySelectorAll(".botonCategorias");
 const tituloPrincipal = document.querySelector("#tituloPrincipal");
 const carritoCantidad = document.querySelector("#carritoCantidad");
-let botonAgregar = document.querySelectorAll (".botonAgregar")
+let botonAgregar = document.querySelectorAll (".botonAgregar");
 
 function cargaProductos(productoSeleccionados) {
     conteinerProductos.innerHTML = "";
@@ -563,14 +883,14 @@ function cargaProductos(productoSeleccionados) {
         conteinerProductos.append(div);
     })
     actualizarAgregar();
-
 }
 cargaProductos(productos);
 
 botonCategoria.forEach(boton =>{
     boton.addEventListener("click", (e) =>{
-        botonCategoria.forEach(boton => boton.classList.remove("active"));
-        e.currentTarget.classList.add("active");
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        botonCategoria.forEach(boton => boton.classList.remove("activar"));
+        e.currentTarget.classList.add("activar");
 
         if(e.currentTarget.id != "todosProductos"){
             const productoCategoria = productos.find (producto => producto.categoria.id === e.currentTarget.id);
@@ -609,12 +929,12 @@ function agregarCarrito (e){
         productosCarrito[index].cantidad++;
     } else{
         productosAgregados.cantidad = 1;
-        productosCarrito.push (productosAgregados)
+        productosCarrito.push (productosAgregados);
     }
     actualizarCantidad ();
     localStorage.setItem("productosAlCarrito", JSON.stringify(productosCarrito));
 }
 function actualizarCantidad(){
-    let cantidadActualizar = productosCarrito.reduce((acc, producto)=> acc + producto.cantidad, 0)
-    carritoCantidad.innerText = cantidadActualizar;
+    let cantidadActualizar = productosCarrito.reduce((acc, producto)=> acc + producto.cantidad, 0);
+    carritoUp.innerText = cantidadActualizar;
 }
