@@ -6,6 +6,7 @@ const carritoProductos = document.querySelector("#carritoProductos");
 const carritoOpciones = document.querySelector("#carritoOpciones");
 const carritoCompra = document.querySelector("#carritoCompra");
 const carritoTotal = document.querySelector("#carritoTotal");
+const carritoTotalProductos = document.querySelector("#carritoTotalProductos");
 let carritoOpBorrar = document.querySelector("#opcionesCarritoBorrar");
 let carritoBorrar = document.querySelectorAll(".carritoBorrar");
 let carritoOpCompro = document.querySelector("#opcionesCarritoCompro");
@@ -53,6 +54,8 @@ function cargarCarrito(){
 })
     actualizarAgregar ();
     actualizarTotal();
+    const totalCantidadProductos = productosCarrito.reduce((acc, producto) => acc + producto.cantidad, 0);
+    carritoTotalProductos.innerText = `Total de productos: ${totalCantidadProductos}`;
     }else{
         carritoVacio.classList.remove("borrar");
         carritoProductos.classList.add("borrar");
