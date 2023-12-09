@@ -112,4 +112,5 @@ function compraFinalizada(){
     carritoProductos.classList.add("borrar");
     carritoOpciones.classList.add("borrar");
     carritoCompra.classList.remove("borrar");
+    carritoTotalProductos.classList.toggle("borrar", !carritoTotalProductos.classList.contains("borrar"));
 }
