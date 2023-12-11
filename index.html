@@ -20,26 +20,31 @@
     </article>
     <article class="responsive">
         <header>
-            <div><a href="./index.html"><img src="./img/logofit.png" alt="logo de FitPoint"></a>
-            </div>
+            <div>
+                <a href="./index.html"><img src="./img/logofit.png" alt="logo de FitPoint"></a>
+            </div>            
             <aside class="buscar">
-                <input type="text" class="buscarProductos" id="inputBuscar" placeholder="Buscar productos" oninput="buscarProductos()">
-                <input type="submit" class="botonBuscar" value="🔎︎" onclick="buscarProductos()">
+                <input type="text" id="buscarProductosResponsive" class="buscarProductos" placeholder="Buscar productos">
+                <input type="submit" class="botonBuscar" value="🔎︎">
             </aside>
-            <button id="abrir" class="abrir"><i class="bi bi-three-dots-vertical text-white"></i></button>
+            <button id="abrir" class="abrir">
+                <i class="bi bi-three-dots-vertical text-white"></i>
+            </button>
         </header>
     </article>
     <section class="menu">
         <article class="barraPrincipal">
         <header>
-            <button id="cerrar" class="cerrar"><i class="bi bi-x-lg text-white"></i></button>
+            <button id="cerrar" class="cerrar">
+                <i class="bi bi-x-lg text-white"></i>
+            </button>
             <div class="logo">
                 <a href="./index.html"><img src="./img/fitlogo.png" alt="logo de FitPoint"></a>
-                <aside class="buscar">
-                    <input type="text" class="buscarProductos" placeholder="Buscar productos">
-                    <input type="submit" class="botonBuscar" value="🔎︎" onclick="buscarProductos()">
-                </aside>
             </div>
+            <aside class="buscar">
+                <input type="text" id="buscarProductos" class="buscarProductos" placeholder="Buscar productos">
+                <input type="submit" class="botonBuscar" value="🔎︎">
+            </aside>
             <nav>
                 <ul>
                     <li>

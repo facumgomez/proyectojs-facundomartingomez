@@ -31,7 +31,6 @@ main{
         p{
             font-size: 14px;}
         button{
-            border: 0;
             border-radius: 32px;
             border: 2px solid $color4; 
             background-color: $color4;
@@ -109,7 +108,6 @@ main{
             background-color: $color5;
             text-transform: uppercase;
             padding: 3px;}
-
 .borrar{
     display: none;
 }

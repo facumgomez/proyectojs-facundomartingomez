@@ -51,7 +51,7 @@ function cargarCarrito(){
 
     restar.addEventListener("click", () => modificarCantidad(producto.id, "restar"));
     sumar.addEventListener("click", () => modificarCantidad(producto.id, "sumar"));
-})
+});
     actualizarAgregar ();
     actualizarTotal();
     const totalCantidadProductos = productosCarrito.reduce((acc, producto) => acc + producto.cantidad, 0);
@@ -61,16 +61,16 @@ function cargarCarrito(){
         carritoProductos.classList.add("borrar");
         carritoOpciones.classList.add("borrar");
         carritoCompra.classList.add("borrar");
-    }
-}
+    };
+};
 cargarCarrito();
 
 function actualizarAgregar (){
     carritoBorrar = document.querySelectorAll (".carritoBorrar");
     carritoBorrar.forEach(boton=>{
         boton.addEventListener("click", eliminarCarrito);
-    })
-}
+    });
+};
 function eliminarCarrito(e){
     const idBorrar = e.currentTarget.id;
     const index = productosCarrito.findIndex(producto => producto.id === idBorrar);
@@ -78,7 +78,7 @@ function eliminarCarrito(e){
     cargarCarrito();
 
     localStorage.setItem("productosAlCarrito", JSON.stringify(productosCarrito));
-}
+};
 function modificarCantidad(id, operacion) {
     const index = productosCarrito.findIndex(producto => producto.id === id);
 
@@ -87,21 +87,24 @@ function modificarCantidad(id, operacion) {
             productosCarrito[index].cantidad -= 1;
         } else if (operacion === "sumar") {
             productosCarrito[index].cantidad += 1;
-        }
+        };
         cargarCarrito();
         localStorage.setItem("productosAlCarrito", JSON.stringify(productosCarrito));
-    }
-}
+    };
+};
 function actualizarTotal(){
     const sumaTotal = productosCarrito.reduce((acc, producto)=> acc + (producto.precio * producto.cantidad), 0);
     carritoTotal.innerText = `$${sumaTotal}`;
-}
+};
 
 carritoOpBorrar.addEventListener("click", opcionesCarritoBorrar);
 function opcionesCarritoBorrar() {
     productosCarrito.length = 0;
     localStorage.setItem("productosAlCarrito", JSON.stringify(productosCarrito));
-    cargarCarrito();}
+    cargarCarrito();
+    carritoTotalProductos.classList.add("borrar");
+    carritoTotal.innerText = "";
+};
 
 carritoOpCompro.addEventListener("click", compraFinalizada);
 function compraFinalizada(){
@@ -113,4 +116,4 @@ function compraFinalizada(){
     carritoOpciones.classList.add("borrar");
     carritoCompra.classList.remove("borrar");
     carritoTotalProductos.classList.toggle("borrar", !carritoTotalProductos.classList.contains("borrar"));
-}
+};
