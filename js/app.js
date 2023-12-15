@@ -1,7 +1,6 @@
-let productos = [];
 function obtenerProductos(){
     return new Promise((resolve, reject)  => {
-        fetch("../json/productos.json")
+        fetch("/json/productos.json")
         .then(response => {
             if(!response.ok){
                 throw new Error("Error al cargar la API, comunicate con el administrador");
@@ -19,7 +18,7 @@ async function obtencionProductos(){
         const productosObtener = await obtenerProductos()
         cargaProductos(productosObtener);
     }catch (error){
-        console.error ("Error al obtener los productos de la app", error)
+        console.error("Error al obtener los productos de la app", error);
     };
 };
 obtencionProductos();
