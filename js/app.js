@@ -1,3 +1,4 @@
+let productos = [];
 function obtenerProductos(){
     return new Promise((resolve, reject)  => {
         fetch("../json/productos.json")
