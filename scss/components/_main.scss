@@ -75,7 +75,11 @@ main{
             background-color: transparent;
         }
     }
-
+.carritoCantidad{
+    button:hover{
+        color:$color2
+    }
+}
 .carritoOpciones{
     display: flex;
     justify-content: space-between;
@@ -111,3 +115,12 @@ main{
 .borrar{
     display: none;
 }
+.todosProductos{    
+    border: 0;
+    color: $color2;
+    background-color: transparent;
+    transition: background-color .4s;
+    font-weight: 600;
+    font-size: 20px;}
+    .todosProductos:hover{
+    color: $color1;}
