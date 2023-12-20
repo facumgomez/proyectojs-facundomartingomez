@@ -2,5 +2,38 @@
   "dependencies": {
     "bootstrap-icons": "^1.11.2",
     "sass": "^1.69.5"
-  }
+  },
+  "name": "proyecto-facundomartingomez",
+  "version": "1.0.0",
+  "main": "app.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Facundo Martin Gómez",
+  "license": "ISC",
+  "description": "Fit Point Equipment",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/facumgomez/proyectojs-facundomartingomez.git"
+  },
+  "keywords": [
+    "fitness",
+    "mancuernas",
+    "pesas",
+    "gimanasio",
+    "maquinas",
+    "entrenamiento",
+    "funcional",
+    "crossfit",
+    "barras",
+    "discos",
+    "ejercicio",
+    "calsitenia",
+    "deporte"
+  ],
+  "bugs": {
+    "url": "https://github.com/facumgomez/proyectojs-facundomartingomez/issues"
+  },
+  "homepage": "https://github.com/facumgomez/proyectojs-facundomartingomez#readme"
 }

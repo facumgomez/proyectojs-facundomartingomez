@@ -7,9 +7,6 @@ const carritoOpciones = document.querySelector("#carritoOpciones");
 const carritoCompra = document.querySelector("#carritoCompra");
 const carritoTotal = document.querySelector("#carritoTotal");
 const carritoTotalProductos = document.querySelector("#carritoTotalProductos");
-let carritoOpBorrar = document.querySelector("#opcionesCarritoBorrar");
-let carritoBorrar = document.querySelectorAll(".carritoBorrar");
-let carritoOpCompro = document.querySelector("#opcionesCarritoCompro");
 
 function cargarCarrito() {
     if (productosCarrito && productosCarrito.length > 0) {
@@ -65,6 +62,7 @@ function cargarCarrito() {
 cargarCarrito();
 
 function actualizarAgregar() {
+    let carritoBorrar = document.querySelectorAll(".carritoBorrar");
     carritoBorrar = document.querySelectorAll(".carritoBorrar");
     carritoBorrar.forEach(boton => {
         boton.addEventListener("click", eliminarCarrito);
@@ -87,11 +85,12 @@ function eliminarCarrito(e) {
 function modificarCantidad(id, operacion) {
     const index = productosCarrito.findIndex(producto => producto.id === id);
     if (index !== -1) {
-        if (operacion === "restar" && productosCarrito[index].cantidad > 1) {
-            productosCarrito[index].cantidad -= 1;
-        } else if (operacion === "sumar") {
-            productosCarrito[index].cantidad += 1;
-        };
+        productosCarrito[index].cantidad = (operacion === "restar" && productosCarrito[index].cantidad > 1)
+        ? productosCarrito[index].cantidad - 1
+        : (operacion === "sumar")
+        ? productosCarrito[index].cantidad + 1
+        : productosCarrito[index].cantidad;
+        productosCarrito[index].cantidad = Math.max(0, productosCarrito[index].cantidad);
         cargarCarrito();
         localStorage.setItem("productosAlCarrito", JSON.stringify(productosCarrito));
     };
@@ -102,6 +101,7 @@ function actualizarTotal() {
     carritoTotal.innerText = `$${sumaTotal}`;
 }
 
+let carritoOpBorrar = document.querySelector("#opcionesCarritoBorrar");
 carritoOpBorrar.addEventListener("click", opcionesCarritoBorrar);
 function opcionesCarritoBorrar() {
     productosCarrito.length = 0;
@@ -111,6 +111,7 @@ function opcionesCarritoBorrar() {
     carritoTotal.innerText = "";
 };
 
+let carritoOpCompro = document.querySelector("#opcionesCarritoCompro");
 carritoOpCompro.addEventListener("click", compraFinalizada);
 function compraFinalizada() {
     productosCarrito.length = 0;

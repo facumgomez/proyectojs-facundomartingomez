@@ -1,5 +1,5 @@
 function obtenerProductos(){
-    return new Promise((resolve, reject)  => {
+    return new Promise((resolve, reject) => {
         fetch("/json/productos.json")
         .then(response => {
             if(!response.ok){
@@ -24,13 +24,6 @@ async function obtencionProductos(){
 obtencionProductos();
 
 const conteinerProductos = document.querySelector("#conteinerProductos");
-const botonCategoria = document.querySelectorAll(".botonCategorias");
-const tituloPrincipal = document.querySelector("#tituloPrincipal");
-const carritoCantidad = document.querySelector("#carritoCantidad");
-const buscarProductos = document.querySelector("#buscarProductos");
-const buscarProductosResponsive = document.querySelector("#buscarProductosResponsive");
-let botonAgregar = document.querySelectorAll (".botonAgregar");
-
 function cargaProductos(productoSeleccionados) {
     conteinerProductos.innerHTML = "";
     if (productoSeleccionados.length === 0) {
@@ -65,25 +58,32 @@ function cargaProductos(productoSeleccionados) {
     actualizarAgregar();
 };
 
+const botonCategoria = document.querySelectorAll(".botonCategorias");
+const tituloPrincipal = document.querySelector("#tituloPrincipal");
 botonCategoria.forEach(boton => {
     boton.addEventListener("click", (e) => {
         window.scrollTo({ top: 0, behavior: "smooth" });
         botonCategoria.forEach(boton => boton.classList.remove("activar"));
         e.currentTarget.classList.add("activar");
 
-        if(e.currentTarget.id != "todosProductos") {
-            const productoCategoria = productos.find (producto => producto.categoria.id === e.currentTarget.id);
-            tituloPrincipal.innerText = productoCategoria.categoria.nombre;
-            const productosFilter = productos.filter (producto => producto.categoria && producto.categoria.id === e.currentTarget.id);
-            cargaProductos(productosFilter);
-        } else {
-            tituloPrincipal.innerText = "Todos los Productos";
-        };
+        const productoCategoria = e.currentTarget.id !== "todosProductos"
+            ? productos.find(producto => producto.categoria.id === e.currentTarget.id)
+            : null;
+        tituloPrincipal.innerText = productoCategoria?.categoria.nombre || "Todos los Productos";
+
+        const productosFilter = e.currentTarget.id !== "todosProductos"
+            ? productos.filter(producto => producto.categoria && producto.categoria.id === e.currentTarget.id)
+            : productos;
+
+        cargaProductos(productosFilter);
     });
 });
 
-buscarProductos.addEventListener("input", () => {
-    const productosBuscar = buscarProductos.value.toLowerCase();
+const buscar = document.querySelector("#buscar");
+const buscarProductos = document.querySelector("#buscarProductos");
+document.getElementById("buscar").addEventListener("submit", function(event) {
+    event.preventDefault(); 
+    const productosBuscar = document.getElementById("buscarProductos").value.toLowerCase();
     const productosFiltrados = productos.filter(producto =>
         producto.titulo.toLowerCase().includes(productosBuscar) ||
         producto.categoria.nombre.toLowerCase().includes(productosBuscar)
@@ -91,8 +91,11 @@ buscarProductos.addEventListener("input", () => {
     cargaProductos(productosFiltrados);
 });
 
-buscarProductosResponsive.addEventListener("input", () => {
-    const productosBuscarResponsive = buscarProductosResponsive.value.toLowerCase();
+const buscarResponsive = document.querySelector("#buscarResponsive");
+const buscarProductosResponsive = document.querySelector("#buscarProductosResponsive");
+document.getElementById("buscarResponsive").addEventListener("submit", function(event) {
+    event.preventDefault(); 
+    const productosBuscarResponsive = document.getElementById("buscarProductosResponsive").value.toLowerCase();
     const productosFiltradosResponsive = productos.filter(producto =>
         producto.titulo.toLowerCase().includes(productosBuscarResponsive) ||
         producto.categoria.nombre.toLowerCase().includes(productosBuscarResponsive)
@@ -100,6 +103,7 @@ buscarProductosResponsive.addEventListener("input", () => {
     cargaProductos(productosFiltradosResponsive);
 });
 
+let botonAgregar = document.querySelectorAll (".botonAgregar");
 function actualizarAgregar (){
     botonAgregar = document.querySelectorAll(".botonAgregar");
     botonAgregar.forEach(boton =>{

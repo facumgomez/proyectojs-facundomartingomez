@@ -23,7 +23,7 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #3d3f3f;
+  background-color: #3d4e4e;
 }
 .primerBarra p {
   padding: 8px;
@@ -263,7 +263,7 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #3d3f3f;
+  background-color: #3d4e4e;
 }
 footer p {
   padding: 8px;
@@ -364,7 +364,7 @@ footer p {
   .menu .barraPrincipal header .logo {
     display: none;
   }
-  .menu .barraPrincipal aside {
+  .menu .barraPrincipal form {
     display: none;
   }
   .barraPrincipal {
